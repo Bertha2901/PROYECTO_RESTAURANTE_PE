@@ -4,10 +4,40 @@
 #include <math.h>
 using namespace std;
 
+int reservar(){
+    string Ncompleto;
+    int Nmesa, horario, opcion;
+    string atencion[3]{"[1]=viernes","[2]=sabado","[3]=domingo"};
+    cout<<"Por favor ingrese su pinche nombre completo: "<<endl;
+    getline(cin, Ncompleto);
+    cout<<"Bienvenido "<<Ncompleto<<endl;
+    cout<<endl;
+    cout<<"Los dias disponibles para reservar son: "<<endl;
+    for (int i = 0; i < 3; i++)
+    {
+        cout<<atencion[i]<<endl;
+    }
+    cout<<"Para que dia desea su reservacion : "<<endl;
+    cin>>opcion;
+    switch (opcion)
+    {
+    case 1:
+        cout<<"Su reservacion se hizo para el dia "<<atencion[0]<<endl;
+        break;
+    case 2:
+        cout<<"Su revervacion se hizo para el dia "<<atencion[1]<<endl;
+        break;
+    case 3:
+        cout<<"Su reservacion se hizo para el dia  "<<atencion[2]<<endl;
+        break;
+    default:
+        break;
+    }
+    return;
+}
 int menu(){
-    int compras, opciones, total, subtotal, isv;
+    int compras, opciones, total, subtotal, isv,dato;
     double const ISV=0.15;
-    char seguir;
     string arreglo[5]{"Langosta","Pescado Frito","Sopa de caracol","Almejas","Filete"};
     int precio[5]{150,200,160,250,140};
     cout<<"Bienvenido a Restaurante DELFIN porfavor elija el menu del dia: "<<endl;
@@ -16,13 +46,19 @@ int menu(){
     {
         cout<<i+1<<"."<<arreglo[i]<<"---Valor--->"<<" Lps"<<precio[i]<<endl;
     }
-    cout<<"Elija cuantos platos quiere hoy para su menu: "<<endl;
-    cin >>opciones;
+        cout<<"Elija cuantos platos desea mostrar para este dia"<<endl;
+        cin>>opciones;
+        cout<<endl;
+        cout<<"Usted ha decidido mostrar "<<opciones<<" Ordenes en el menu el dia de hoy"<<endl;
     for (int i = 0; i < opciones; i++)
     {
-        cout<<"Por favor ingrese las opciones para el dia de hoy: "<<endl;
-        cin >>arreglo[i];
-    }
+        cout<<"Por favor Ingrese la orden # "<<i+1<<endl;
+        cin>>arreglo[i];
+        if (i==1)
+        {
+            cout<<arreglo[0]<<"--Valor--"<<precio[0]<<endl;
+        }
+    } 
     return 0;
 }   
 int main(){
@@ -32,26 +68,17 @@ int main(){
     cout<<endl;
     cout<<"          ==================================================          "<<endl;
     cout<<"                  BIENVENIDO A RESTAURANTE EL DELFIN                  "<<endl;
-    cout<<"          ==================================================          "<<endl;
+    cout<<"          ==================================================          "<<endl;  
     cout<<"Por favor ingrese la opcion segun sea su caso:"<<endl;
-    cout<<"1.Ya cuenta con reservacion"<<endl;
-    cout<<"2.No cuenta con reservacion"<<endl;
-    cout<<"3.Orden para llevar"<<endl;
+    cout<<"3.Crear reservacion"<<endl;
+    cout<<"1.Crear los platos del dia "<<endl;
+    cout<<"2.Listar los platos del dia"<<endl;
     cin>>opcion;
         switch (opcion)
         {
         case 1:
-            cout<<"Ingrese el nombre para validar su reservacion:"<<endl;
-            cin >>nombre;
-            if (nombre=="bertha")
-            {
-                cout<<"La reservacion esta a nombre de bertha, la mesa asignada es:"<<Nmesas[6][4]<<endl;
-            }
-            else
-            {
-                cout<<"Esa reservacion no existe"<<endl;
-            }
-            cout<<menu()<<endl;
+            cout<<"Por favor haga su reservacion"<<endl;
+            cout<<reservar();
             break;
         case 2:
            cout<<"========================================================================"<<endl;
