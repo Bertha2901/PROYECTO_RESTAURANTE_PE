@@ -29,8 +29,9 @@ void menuDia(string menu[], int precio[]){// recibir parametros
 int reservacion(){
     string dias[3];
     int i;
+    cout << "********************************************************"<<endl;
     cout<<"Bienvenido a la reservacion para restaurante el DELFIN"<<endl;
-    cout<<endl;
+    cout<<"**********************************************************" <<endl;
     cout<<"Detalle que dias desea poner disponible para reservaciones "<<endl;
     for (int i = 0; i < 3; i++)
     {
@@ -45,8 +46,7 @@ int reservacion(){
     cout<<endl;
     return 0;
 }
-void menuDia(string[matrizMenu],string[menu][precio]){
-
+void menuDia(string matrizMenu[],string menu[],int precio[]){
     for (int i = 0; i < 5; i++)
     {
         cout<<menu[i]<<" valor LPS."<<precio[i]<<endl;
@@ -54,14 +54,14 @@ void menuDia(string[matrizMenu],string[menu][precio]){
 }
 
 int Vender(){
-    menuDia();
+int matrizMenu();
     int cantidad;
     string menu[3];
     cout<<"Cuantos platillos ordenara:"<<endl;
     cin>>cantidad;
     for (int i = 0; i < cantidad; i++)
     {
-        cout<<"Ingrese el nombre del platillo "<<endl;
+        cout<<"Ingrese el nombre del platillo: "<<endl;
         cin>>menu[i];
     }
     cout<<"Por favor confirme que esta es su orden final y precione ENTER"<<endl;
@@ -69,7 +69,6 @@ int Vender(){
     {
         cout<<menu[i]<<endl;
     }
-    
     cout<<"Espere 15 minutos mientras sale su orden"<<endl;
     cout<<"Aqui esta su orden"<<endl;
     cout<<"Buen Provecho!!"<<endl;
@@ -102,37 +101,22 @@ int facturacion(){
 
     return 0;
 }
-int reservacion(){
-    string dias[3];
-    int i;
-    cout<<"Bienvenido a la reservacion para restaurante el DELFIN"<<endl;
-    cout<<endl;
-    cout<<"Detalle que dias desea poner disponible para reservaciones "<<endl;
-    for (int i = 0; i < 3; i++)
-    {
-        cin>>dias[i];   
-    }
-    cout<<endl;
-    cout<<"Los dias disponibles son: "<<endl;
-    for (int i = 0; i < 3; i++)
-    {
-        cout<<dias[i]<<endl;
-    }
-    cout<<endl;
-    return 0;
-}
-
 int main(){
     int opcion;
     cout<<endl;
+    cout << "******************************************"<<endl;
     cout<<"=====BIENVENIDO A RESTAURANTE EL DELFIN====="<<endl;
+    cout<<  "******************************************"<<endl;
     do
     {
         cout<<endl;
-        cout<<"ELIJA UNA OPCION SEGUN SEA SU CASO "<<endl;
-        cout<<"[1] Crear platillos "<<endl;
-        cout<<"[2] Crear detalles para reservacion "<<endl;
-        cout<<"[3] VENDER ";
+        cout<<"******ELIJA UNA OPCION SEGUN SEA SU CASO*****"  <<endl;
+        cout <<"********************************************"  <<endl;
+        cout<<"[1].............Crear platillos............."   <<endl;
+        cout<<"[2].........Crear detalles para reservacion."   <<endl;
+        cout<<"[3].................VENDER.................."   <<endl;
+        cout<<"[4]...............ESTADISTICA..............."   <<endl;
+        cout <<"********************************************"  <<endl;
         cin>>opcion;
         switch (opcion)
         {
